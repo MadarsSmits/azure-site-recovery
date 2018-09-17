@@ -2,10 +2,10 @@
   "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
   "contentVersion": "1.0.0.0",
   "parameters": {
-    "adminUsername": {
-      "type": "string",
-	"defaultValue": "azureadmin",
-      "metadata": {
+	"adminUsername": {
+		"type": "string",
+		"defaultValue": "azureadmin",
+	"metadata": {
         "description": "User name for the Virtual Machine."
       }
     },
@@ -16,7 +16,7 @@
       }
     },
     "dnsLabelPrefix": {
-      "type": "string",
+	"type": "string",
 	"defaultValue": "mydns",
       "metadata": {
         "description": "Unique DNS Name for the Public IP used to access the Virtual Machine."
