@@ -67,8 +67,7 @@
       },
       "properties": {
         "accountType": "[variables('storageAccountType')]"
-      }
-    },
+      },
     {
       "apiVersion": "2015-06-15",
       "type": "Microsoft.Network/publicIPAddresses",
@@ -80,8 +79,7 @@
         "dnsSettings": {
           "domainNameLabel": "[parameters('dnsLabelPrefix')]"
         }
-      }
-    },
+      },
     {
       "apiVersion": "2015-06-15",
       "type": "Microsoft.Network/virtualNetworks",
@@ -102,8 +100,7 @@
             }
           }
         ]
-      }
-    },
+      },
     {
       "apiVersion": "2015-06-15",
       "type": "Microsoft.Network/networkInterfaces",
@@ -129,8 +126,7 @@
             }
           }
         ]
-      }
-    },
+      },
     {
       "apiVersion": "2016-04-30-preview",
       "type": "Microsoft.Compute/virtualMachines",
@@ -175,6 +171,5 @@
           }
         }
       }
-    }
   ]
 }
