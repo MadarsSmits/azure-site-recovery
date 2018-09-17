@@ -1,7 +1,7 @@
 {
-  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
-  "contentVersion": "1.0.0.0",
-  "parameters": {
+"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+"contentVersion": "1.0.0.0",
+	"parameters": {
 	"adminUsername": {
 		"type": "string",
 		"defaultValue": "azureadmin",
@@ -11,15 +11,15 @@
     },
     "adminPassword": {
       "type": "securestring",
-      "metadata": {
-        "description": "Password for the Virtual Machine."
+		"metadata": {
+			"description": "Password for the Virtual Machine."
       }
     },
-    "dnsLabelPrefix": {
-	"type": "string",
-	"defaultValue": "mydns",
-      "metadata": {
-        "description": "Unique DNS Name for the Public IP used to access the Virtual Machine."
+	"dnsLabelPrefix": {
+		"type": "string",
+		"defaultValue": "mydns",
+		"metadata": {
+			"description": "Unique DNS Name for the Public IP used to access the Virtual Machine."
       }
     },
     "ubuntuOSVersion": {
