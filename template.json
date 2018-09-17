@@ -4,7 +4,7 @@
      "parameters": {
         "name": {
             "type": "string",
-		"defaultValue": "TestDR"
+		"defaultValue": "TestDR2"
         },
         "location": {
             "type": "string",
@@ -12,7 +12,7 @@
         },
         "apiVersion": {
             "type": "string",
-	   	"defaultValue": "2018-01-10"
+		"defaultValue": "2018-01-10"
         }
     },
     "resources": [
