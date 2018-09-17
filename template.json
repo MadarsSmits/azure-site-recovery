@@ -4,7 +4,7 @@
      "parameters": {
         "name": {
             "type": "string",
-	    "value": "TestDR"
+	    "defaultValue": "TestDR"
         },
         "location": {
             "type": "string",
