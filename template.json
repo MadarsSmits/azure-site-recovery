@@ -12,7 +12,7 @@
         },
         "apiVersion": {
             "type": "string",
-	    "value": "2018-01-10 "
+	    "value": "2018-01-10"
         }
     },
     "resources": [
