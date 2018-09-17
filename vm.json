@@ -17,7 +17,7 @@
     },
 	"dnsLabelPrefix": {
 		"type": "string",
-		"defaultValue": "mydns",
+		"defaultValue": "[concat(uniquestring(resourceGroup().id), 'salinuxvm')]",
 		"metadata": {
 			"description": "Unique DNS Name for the Public IP used to access the Virtual Machine."
       }
