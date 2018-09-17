@@ -4,7 +4,7 @@
      "parameters": {
         "name": {
 		"type": "string",
-		"defaultValue": "TestDR2"
+		"defaultValue": "MadarsDR"
         },
         "location": {
 		"type": "string",
