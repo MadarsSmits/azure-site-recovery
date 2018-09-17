@@ -3,13 +3,16 @@
     "contentVersion": "1.0.0.0",
      "parameters": {
         "name": {
-            "type": "string"
+            "type": "string",
+	    "defaultValue": "TestDR"
         },
         "location": {
-            "type": "string"
+            "type": "string",
+	    "defaultValue": "westeurope"
         },
         "apiVersion": {
-            "type": "string"
+            "type": "string",
+	    "defaultValue": "2018-01-10 "
         }
     },
     "resources": [
