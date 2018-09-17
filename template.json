@@ -1,21 +1,21 @@
 {
 "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json",
-    "contentVersion": "1.0.0.0",
-     "parameters": {
-        "name": {
-		"type": "string",
-		"defaultValue": "MadarsDR"
-        },
-        "location": {
-		"type": "string",
-	    	"defaultValue": "westeurope"
-        },
-        "apiVersion": {
-		"type": "string",
-		"defaultValue": "2018-01-10"
+	"contentVersion": "1.0.0.0",
+		"parameters": {
+			"name": {
+			"type": "string",
+			"defaultValue": "MadarsDR"
+	 },
+		"location": {
+			"type": "string",
+			"defaultValue": "westeurope"
+	 },
+		"apiVersion": {
+			"type": "string",
+			"defaultValue": "2018-01-10"
         }
     },
- "resources": [
+ 	"resources": [
         {
             "apiVersion": "[parameters('apiVersion')]",
             "name": "[parameters('name')]",
@@ -28,4 +28,4 @@
             "properties": {}
         }
    ]
-}	
+}
