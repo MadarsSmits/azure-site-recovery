@@ -4,15 +4,15 @@
      "parameters": {
         "name": {
             "type": "string",
-	    "defaultValue": "TestDR"
+	    "value": "TestDR"
         },
         "location": {
             "type": "string",
-	    "defaultValue": "westeurope"
+	    "value": "westeurope"
         },
         "apiVersion": {
             "type": "string",
-	    "defaultValue": "2018-01-10 "
+	    "value": "2018-01-10 "
         }
     },
     "resources": [
