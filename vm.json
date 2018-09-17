@@ -67,7 +67,8 @@
       },
       "properties": {
         "accountType": "[variables('storageAccountType')]"
-      },
+      }
+	},
     {
       "apiVersion": "2015-06-15",
       "type": "Microsoft.Network/publicIPAddresses",
