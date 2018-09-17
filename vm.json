@@ -4,6 +4,7 @@
   "parameters": {
     "adminUsername": {
       "type": "string",
+	"defaultValue": "azureadmin",
       "metadata": {
         "description": "User name for the Virtual Machine."
       }
@@ -16,6 +17,7 @@
     },
     "dnsLabelPrefix": {
       "type": "string",
+	"defaultValue": "mydns",
       "metadata": {
         "description": "Unique DNS Name for the Public IP used to access the Virtual Machine."
       }
