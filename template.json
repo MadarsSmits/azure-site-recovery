@@ -4,11 +4,11 @@
      "parameters": {
         "name": {
             "type": "string",
-	    "defaultValue": "TestDR"
+		"defaultValue": "Standard_LRS"
         },
         "location": {
             "type": "string",
-	    "value": "westeurope"
+	    "defaultValue": "[resourceGroup().location]"
         },
         "apiVersion": {
             "type": "string",
