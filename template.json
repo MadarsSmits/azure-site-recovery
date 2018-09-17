@@ -3,15 +3,15 @@
     "contentVersion": "1.0.0.0",
      "parameters": {
         "name": {
-            "type": "string",
+		"type": "string",
 		"defaultValue": "TestDR2"
         },
         "location": {
-            "type": "string",
-	    "defaultValue": "westeurope"
+		"type": "string",
+	    	"defaultValue": "westeurope"
         },
         "apiVersion": {
-            "type": "string",
+		"type": "string",
 		"defaultValue": "2018-01-10"
         }
     },
