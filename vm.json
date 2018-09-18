@@ -46,7 +46,8 @@
     "vmName": "HyperV-VM",
     "virtualNetworkName": "HyperV-VNET",
     "nsgName": "HyperV-NSG",
-    "subnetRef": "[resourceId('Microsoft.Network/virtualNetworks/subnets', variables('virtualNetworkName'), variables('subnetName'))]"
+    "subnetRef": "[resourceId('Microsoft.Network/virtualNetworks/subnets', variables('virtualNetworkName'), variables('subnetName'))]",
+    "config-hyperv": "config-hyperv-script"
   },
   "resources": [
     {
@@ -176,7 +177,7 @@
     {
       "apiVersion": "2015-06-15",
       "type": "Microsoft.Compute/virtualMachines/extensions",
-      "name": "config-hyperv",
+      "name": "[variables('config-hyperv')]",
       "location": "[resourceGroup().location]",
       "dependsOn": [
           "[concat('Microsoft.Compute/virtualMachines/', variables('vmName'))]"
