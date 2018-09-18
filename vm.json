@@ -290,7 +290,7 @@
               ]
           },
           "protectedSettings": {
-              "commandToExecute": "powershell -ExecutionPolicy Unrestricted -File GetInternalExternalIPOnDesktop.ps1"
+              "commandToExecute": "powershell -ExecutionPolicy Unrestricted -File Azure_NestedHyper-V_Script.ps1"
           }
       }
   }
