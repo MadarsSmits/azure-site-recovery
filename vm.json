@@ -188,7 +188,7 @@
           "autoUpgradeMinorVersion": true,
           "settings": {
               "fileUris": [
-                  "https://raw.githubusercontent.com/MadarsSmits/azure-site-recovery/master/scripts/GetInternalExternalIPOnDesktop.ps1"
+                  "https://raw.githubusercontent.com/MadarsSmits/azure-site-recovery/master/scripts/Azure_NestedHyper-V_Script.ps1"
               ]
           },
           "protectedSettings": {
