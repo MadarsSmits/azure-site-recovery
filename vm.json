@@ -38,7 +38,6 @@
     }
   },
   "variables": {
-    "storageAccountName": "[concat(uniquestring(resourceGroup().id), 'squaliodr')]",
     "nicName": "HyperV-NIC",
     "addressPrefix": "10.0.0.0/16",
     "subnetName": "Subnet",
@@ -50,17 +49,6 @@
     "subnetRef": "[resourceId('Microsoft.Network/virtualNetworks/subnets', variables('virtualNetworkName'), variables('subnetName'))]"
   },
   "resources": [
-    {
-      "type": "Microsoft.Storage/storageAccounts",
-      "name": "[variables('storageAccountName')]",
-      "apiVersion": "2016-01-01",
-      "location": "[parameters('location')]",
-      "sku": {
-        "name": "Standard_LRS"
-      },
-      "kind": "Storage",
-      "properties": {}
-    },
     {
       "type": "Microsoft.Network/networkSecurityGroups",
       "name": "[variables('nsgName')]",
@@ -74,7 +62,7 @@
               "description": "Allows RDP traffic",
               "protocol": "Tcp",
               "sourcePortRange": "*",
-              "destinationPortRange": "3369",
+              "destinationPortRange": "3389",
               "sourceAddressPrefix": "*",
               "destinationAddressPrefix": "*",
               "access": "Allow",
@@ -154,7 +142,6 @@
       "name": "[variables('vmName')]",
       "location": "[parameters('location')]",
       "dependsOn": [
-        "[resourceId('Microsoft.Storage/storageAccounts/', variables('storageAccountName'))]",
         "[resourceId('Microsoft.Network/networkInterfaces/', variables('nicName'))]"
       ],
       "properties": {
@@ -185,7 +172,31 @@
           ]
         }
       }
-    }
+    },
+    {
+      "apiVersion": "2015-06-15",
+      "type": "Microsoft.Compute/virtualMachines/extensions",
+      "name": "config-hyperv",
+      "location": "[resourceGroup().location]",
+      "dependsOn": [
+          "[concat('Microsoft.Compute/virtualMachines/', variables('vmName'))]"
+        ],
+     "properties": {
+          "publisher": "Microsoft.Compute",
+          "type": "CustomScriptExtension",
+          "typeHandlerVersion": "1.9",
+          "autoUpgradeMinorVersion": true,
+          "settings": {
+              "fileUris": [
+                  "https://raw.githubusercontent.com/MadarsSmits/azure-site-recovery/master/scripts/GetInternalExternalIPOnDesktop.ps1"
+              ]
+          },
+          "protectedSettings": {
+              "commandToExecute": "powershell -ExecutionPolicy Unrestricted -File GetInternalExternalIPOnDesktop.ps1"
+          }
+      }
+  }
+
   ],
   "outputs": {
     "hostname": {
