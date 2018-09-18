@@ -9,7 +9,7 @@ Write-Host "Installing Hyper-V"
   Install-WindowsFeature Failover-Clustering
 
 Write-Host "Rebooting"
-  Restart-Computer
+  Restart-Computer -Force
 }
 
 
