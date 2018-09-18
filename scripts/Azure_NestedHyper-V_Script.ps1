@@ -26,7 +26,7 @@ Write-Host "Adding DHCP scope"
   Set-DhcpServerv4OptionValue -ScopeID 192.168.0 -DNSServer 8.8.8.8 -Router 192.168.0.1
 
 Write-Host "Rebooting the secound time"
-  Restart-Computer
+  Restart-Computer -Force
   }
 
   if (!(Test-Path 'C:\Program Files\Hyper-V')) {
