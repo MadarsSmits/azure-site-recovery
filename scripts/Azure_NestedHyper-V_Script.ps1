@@ -29,7 +29,7 @@ Write-Host "Rebooting the secound time"
   Restart-Computer
   }
 
-  if (!(Test-Path C:\Program Files\Hyper-V)) {
+  if (!(Test-Path 'C:\Program Files\Hyper-V')) {
    SetupPhase1
 } else {
   SetupPhase2
