@@ -20,7 +20,7 @@
         },
         "absr_name": {
             "type": "string",
-            "defaultValue": "SQUALIO-AzureBSR2"
+            "defaultValue": "SQUALIO-AzureBSR"
         }
     },
     "variables": {},
