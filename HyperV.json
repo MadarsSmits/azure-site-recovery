@@ -8,7 +8,7 @@
         },
         "rgBackup": {
             "type": "string",
-            "defaultValue": "Backup-inAzure"
+            "defaultValue": "BackupVMs-inAzure-onPrem"
         },
         "rgBackupSiteRecovery": {
             "type": "string",
