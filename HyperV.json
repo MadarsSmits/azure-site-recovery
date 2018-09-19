@@ -21,7 +21,7 @@
         "absr_name": {
             "type": "string",
             "defaultValue": "SQUALIO-AzureBSR"
-         }
+        }
     },
     "variables": {},
     "resources": [
@@ -70,11 +70,11 @@
                             "sku": {
                                 "name": "RS0",
                                 "tier": "Standard"
-            },
-            "properties": {}
-        }
-    ]
-}
+                            },
+                            "properties": {}
+                        }
+                    ]
+                }
             }
         }
     ],
