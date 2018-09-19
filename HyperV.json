@@ -81,7 +81,7 @@
                         },
                         {
                             "type": "Microsoft.RecoveryServices/storageAccounts",
-                            "apiVersion": "2016-01-01",
+                            "apiVersion": "2016-06-01",
                             "name": "[variables('absr_storage_name')]",
                             "location": "[parameters('location')]",
                             "properties": {},
