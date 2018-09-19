@@ -8,39 +8,74 @@
         },
         "rgBackup": {
             "type": "string",
-            "defaultValue": "BackupVMs-inAzure-onPrem"
+            "defaultValue": "BackupVMs-onPrem"
         },
         "rgBackupSiteRecovery": {
             "type": "string",
             "defaultValue": "AzureBSR-inAzure"
         },
-        "rgLocation": {
+        "location": {
             "type": "string",
             "defaultValue": "westeurope"
-        }
+        },
+        "absr_name": {
+            "type": "string",
+            "defaultValue": "SQUALIO-AzureBSR"
+         }
     },
     "variables": {},
     "resources": [
         {
             "type": "Microsoft.Resources/resourceGroups",
             "apiVersion": "2018-05-01",
-            "location": "[parameters('rgLocation')]",
+            "location": "[parameters('location')]",
             "name": "[parameters('rgHyperV')]",
             "properties": {}
         },
         {
             "type": "Microsoft.Resources/resourceGroups",
             "apiVersion": "2018-05-01",
-            "location": "[parameters('rgLocation')]",
+            "location": "[parameters('location')]",
             "name": "[parameters('rgBackup')]",
             "properties": {}
         },
         {
             "type": "Microsoft.Resources/resourceGroups",
             "apiVersion": "2018-05-01",
-            "location": "[parameters('rgLocation')]",
+            "location": "[parameters('location')]",
             "name": "[parameters('rgBackupSiteRecovery')]",
             "properties": {}
+        },
+        {
+            "type": "Microsoft.Resources/deployments",
+            "apiVersion": "2017-05-10",
+            "name": "absr_deployment",
+            "resourceGroup": "[parameters('rgBackupSiteRecovery')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Resources/resourceGroups/', parameters('rgBackupSiteRecovery'))]"
+            ],
+            "properties": {
+                "mode": "Incremental",
+                "template": {
+                    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+                    "contentVersion": "1.0.0.0",
+                    "parameters": {},
+                    "variables": {},
+                    "resources": [
+                        {
+                            "apiVersion": "2018-01-10",
+                            "name": "[parameters('absr_name')]",
+                            "location": "[resourceGroup().location]",
+                            "type": "Microsoft.RecoveryServices/vaults",
+                            "sku": {
+                                "name": "RS0",
+                                "tier": "Standard"
+            },
+            "properties": {}
+        }
+    ]
+}
+            }
         }
     ],
     "outputs": {}
