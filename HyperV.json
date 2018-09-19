@@ -21,9 +21,15 @@
         "absr_name": {
             "type": "string",
             "defaultValue": "SQUALIO-AzureBSR4"
+        },
+        "storageAccountType": {
+            "type": "string",
+            "defaultValue": "Premium_LRS"
         }
     },
-    "variables": {},
+    "variables": {
+        "storageAccountName": "[concat(uniquestring(resourceGroup().id), 'squalio')]"
+    },
     "resources": [
         {
             "type": "Microsoft.Resources/resourceGroups",
@@ -72,9 +78,25 @@
                                 "name": "RS0",
                                 "tier": "Standard"
                             }
+                        },
+                        {
+                            "type": "Microsoft.Storage/storageAccounts",
+                            "name": "[variables('storageAccountName')]",
+                            "apiVersion": "2018-02-01",
+                            "location": "[parameters('location')]",
+                            "sku": {
+                                "name": "[parameters('storageAccountType')]"
+                            },
+                            "kind": "Storage",
+                            "properties": {}
                         }
                     ],
-                    "outputs": {}
+                    "outputs": {
+                        "storageAccountName": {
+                            "type": "string",
+                            "value": "[variables('storageAccountName')]"
+                        }
+                    }
                 }
             }
         }
