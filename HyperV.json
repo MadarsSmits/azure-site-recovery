@@ -78,10 +78,10 @@
                         {
                             "type": "Microsoft.Storage/storageAccounts",
                             "name": "[variables('storagePrefix')]",
-                            "apiVersion": "2018-03-01-preview",
+                            "apiVersion": "2016-12-01",
                             "location": "[parameters('location')]",
                             "properties": {
-                                "accountType": "Premium_LRS"
+                                "accountType": "Standard_LRS"
                             }
                         }
                     ],
