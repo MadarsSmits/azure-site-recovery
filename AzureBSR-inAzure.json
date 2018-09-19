@@ -4,7 +4,7 @@
     "parameters": {
         "sr_name": {
             "type": "string",
-            "defaultValue": "SQUALIO-SRDemo"
+            "defaultValue": "SQUALIO-Demo"
         },
         "storageAccountType": {
             "type": "string",
