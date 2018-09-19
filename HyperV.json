@@ -21,13 +21,10 @@
         "absr_name": {
             "type": "string",
             "defaultValue": "SQUALIO-AzureBSR4"
-        },
-        "storagePrefix": {
-            "type": "string",
-            "defaultValue": "madars3demo"
         }
     },
     "variables": {
+        "storagePrefix": " [concat(uniquestring(resourceGroup().id), 'standardsa')]"
     },
     "resources": [
         {
@@ -80,8 +77,8 @@
                         },
                         {
                             "type": "Microsoft.Storage/storageAccounts",
-                            "name": "[parameters('storagePrefix')]",
-                            "apiVersion": "2015-06-15",
+                            "name": "[variables('storagePrefix')]",
+                            "apiVersion": "2016-12-01",
                             "location": "[parameters('location')]",
                             "properties": {
                                 "accountType": "Premium_LRS"
