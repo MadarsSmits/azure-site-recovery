@@ -21,14 +21,9 @@
         "absr_name": {
             "type": "string",
             "defaultValue": "SQUALIO-AzureBSR3"
-        },
-        "absr_storage_type": {
-            "type": "string",
-            "defaultValue": "Premium_LRS"
         }
     },
     "variables": {
-        "absr_storage_name": "[concat(uniquestring(resourceGroup().id), 'absrdemo')]"
     },
     "resources": [
         {
