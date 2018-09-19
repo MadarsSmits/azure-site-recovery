@@ -21,9 +21,16 @@
         "absr_name": {
             "type": "string",
             "defaultValue": "SQUALIO-AzureBSR"
+        },
+        "storagePrefix": {
+            "type": "string",
+            "maxLength": 11
         }
+
     },
-    "variables": {},
+    "variables": {
+        "storageName": "[concat(parameters('storagePrefix'), uniqueString(subscription().id, parameters('rgBackupSiteRecovery')))]"
+    },
     "resources": [
         {
             "type": "Microsoft.Resources/resourceGroups",
@@ -49,7 +56,7 @@
         {
             "type": "Microsoft.Resources/deployments",
             "apiVersion": "2017-05-10",
-            "name": "absr_deployment",
+            "name": "storageDeployment",
             "resourceGroup": "[parameters('rgBackupSiteRecovery')]",
             "dependsOn": [
                 "[resourceId('Microsoft.Resources/resourceGroups/', parameters('rgBackupSiteRecovery'))]"
@@ -63,19 +70,21 @@
                     "variables": {},
                     "resources": [
                         {
-                            "apiVersion": "2017-07-01",
-                            "name": "[parameters('absr_name')]",
-                            "type": "Microsoft.RecoveryServices/vaults",
+                            "type": "Microsoft.Storage/storageAccounts",
+                            "apiVersion": "2017-10-01",
+                            "name": "[variables('storageName')]",
+                            "location": "[parameters('location')]",
+                            "kind": "StorageV2",
                             "sku": {
-                                "name": "RS0",
-                                "tier": "Standard"
-                            },
-                            "properties": {}
+                                "name": "Standard_LRS"
+                            }
                         }
-                    ]
+                    ],
+                    "outputs": {}
                 }
             }
         }
+
     ],
     "outputs": {}
 }
