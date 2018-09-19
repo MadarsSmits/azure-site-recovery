@@ -67,6 +67,7 @@
                             "apiVersion": "2016-06-01",
                             "name": "[parameters('absr_name')]",
                             "location": "[parameters('location')]",
+                            "properties": {},
                             "sku": {
                                 "name": "RS0",
                                 "tier": "Standard"
