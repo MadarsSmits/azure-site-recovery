@@ -20,10 +20,16 @@
         },
         "absr_name": {
             "type": "string",
-            "defaultValue": "SQUALIO-AzureBSR3"
+            "defaultValue": "SQUALIO-AzureBSR4"
+        },
+        "storagePrefix": {
+            "type": "string",
+            "maxLength": 11
         }
     },
-    "variables": {},
+    "variables": {
+        "ABSRStorageName": "[concat(parameters('storagePrefix'), uniqueString(resourceGroup().id))]"
+    },
     "resources": [
         {
             "type": "Microsoft.Resources/resourceGroups",
@@ -75,7 +81,7 @@
                         },
                         {
                             "type": "Microsoft.Storage/storageAccounts",
-                            "name": "madars2squalio",
+                            "name": "[variables('ABSRStorageName')]",
                             "apiVersion": "2015-06-15",
                             "location": "[parameters('location')]",
                             "properties": {
