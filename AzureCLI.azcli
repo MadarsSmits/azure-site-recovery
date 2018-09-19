@@ -1,1 +1,8 @@
+#Create everything
 az deployment create --template-uri https://raw.githubusercontent.com/MadarsSmits/azure-site-recovery/master/HyperV.json --verbose --location westeurope
+
+
+#Remove everything
+az group delete --name AzureBSR-inAzure --yes --no-wait --verbose
+az group delete --name BackupVMs-onPrem --yes --no-wait --verbose
+az group delete --name HyperV-onPrem --yes --no-wait --verbose
