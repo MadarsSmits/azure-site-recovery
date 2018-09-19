@@ -1,0 +1,1 @@
+az deployment create --template-uri https://raw.githubusercontent.com/MadarsSmits/azure-site-recovery/master/HyperV.json --debug --verbose --location westeurope
