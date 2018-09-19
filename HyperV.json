@@ -22,10 +22,8 @@
             "type": "string",
             "defaultValue": "SQUALIO-AzureBSR"
         }
-
     },
-    "variables": {
-    },
+    "variables": {},
     "resources": [
         {
             "type": "Microsoft.Resources/resourceGroups",
@@ -69,7 +67,6 @@
                             "apiVersion": "2016-06-01",
                             "name": "[parameters('absr_name')]",
                             "location": "[parameters('location')]",
-                            "kind": "StorageV2",
                             "sku": {
                                 "name": "RS0",
                                 "tier": "Standard"
@@ -80,7 +77,6 @@
                 }
             }
         }
-
     ],
     "outputs": {}
 }
