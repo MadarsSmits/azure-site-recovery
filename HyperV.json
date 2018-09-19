@@ -49,6 +49,16 @@
             "properties": {}
         },
         {
+            "type": "Microsoft.Storage/storageAccounts",
+            "resourceGroup": "[parameters('rgBackupSiteRecovery')]",
+            "name": "[variables('storagePrefix')]",
+            "apiVersion": "2015-06-15",
+            "location": "[parameters('location')]",
+            "properties": {
+                "accountType": "Standard_LRS"
+            }
+        },
+        {
             "type": "Microsoft.Resources/deployments",
             "apiVersion": "2017-05-10",
             "name": "AzureBSR-inAzure",
@@ -73,15 +83,6 @@
                             "sku": {
                                 "name": "RS0",
                                 "tier": "Standard"
-                            }
-                        },
-                        {
-                            "type": "Microsoft.Storage/storageAccounts",
-                            "name": "[variables('storagePrefix')]",
-                            "apiVersion": "2015-06-15",
-                            "location": "[parameters('location')]",
-                            "properties": {
-                                "accountType": "Standard_LRS"
                             }
                         }
                     ],
