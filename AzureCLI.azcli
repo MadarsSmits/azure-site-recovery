@@ -1,8 +1,11 @@
 #Create everything
-az deployment create --template-uri https://raw.githubusercontent.com/MadarsSmits/azure-site-recovery/master/HyperV.json --verbose --location westeurope
-
-
+az deployment create --template-uri https://raw.githubusercontent.com/MadarsSmits/azure-site-recovery/master/RG.json --verbose --location westeurope --debug
+az deployment create --template-uri https://raw.githubusercontent.com/MadarsSmits/azure-site-recovery/master/AzureBSR-inAzure.json --verbose --name AzureBSR-inAzure --debug --no-wait
+az deployment create --template-uri https://raw.githubusercontent.com/MadarsSmits/azure-site-recovery/master/HyperV-onPrem.json --verbose --name HyperV-onPrem --debug --no-wait
+az deployment create --template-uri https://raw.githubusercontent.com/MadarsSmits/azure-site-recovery/master/BackupVMs-onPrem.json --verbose --name BackupVMs-onPrem --debug --no-wait
 #Remove everything
 az group delete --name AzureBSR-inAzure --yes --no-wait --verbose
 az group delete --name BackupVMs-onPrem --yes --no-wait --verbose
 az group delete --name HyperV-onPrem --yes --no-wait --verbose
+
+az group list --output table
