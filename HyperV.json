@@ -24,7 +24,7 @@
         }
     },
     "variables": {
-        "storagePrefix": "[concat(toLower(uniquestring(resourceGroup().id)), 'squalio')]"
+        "storagePrefix": "[concat(uniquestring(resourceGroup().id), 'squalio')]"
     },
     "resources": [
         {
