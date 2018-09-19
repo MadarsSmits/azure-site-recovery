@@ -50,7 +50,6 @@
         },
         {
             "type": "Microsoft.Storage/storageAccounts",
-            "resourceGroup": "[parameters('rgBackupSiteRecovery')]",
             "name": "[variables('storagePrefix')]",
             "apiVersion": "2015-06-15",
             "location": "[parameters('location')]",
