@@ -24,7 +24,7 @@
         }
     },
     "variables": {
-        "storagePrefix": " [concat(uniquestring(resourceGroup().id), 'madars')]"
+        "storagePrefix": "[concat(uniquestring(resourceGroup().id), 'squalio')]"
     },
     "resources": [
         {
@@ -77,7 +77,7 @@
                         },
                         {
                             "type": "Microsoft.Storage/storageAccounts",
-                            "name": "[variables('storagePrefix')]",
+                            "name": "[toLower(variables('storagePrefix'))]",
                             "apiVersion": "2016-12-01",
                             "location": "[parameters('location')]",
                             "properties": {
