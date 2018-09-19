@@ -24,7 +24,7 @@
         }
     },
     "variables": {
-        "storagePrefix": " [concat(uniquestring(resourceGroup().id), 'standardsa')]"
+        "storagePrefix": " [concat(uniquestring(resourceGroup().id), 'madars')]"
     },
     "resources": [
         {
