@@ -37,13 +37,7 @@ Manual
 - Join Storage Account with SMB and copy both VMs
 - Import both copied VMs into Hyper-V Manager
 
-
-username:
-password: 
-
 ------------------------
 Template "BackupVMs-onPrem.json"
 ------------------------
 az group deployment create --template-uri https://raw.githubusercontent.com/MadarsSmits/azure-site-recovery/master/BackupVMs-onPrem.json --verbose --resource-group BackupVMs-onPrem --debug --no-wait
-
-

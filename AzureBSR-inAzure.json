@@ -13,9 +13,9 @@
     },
     "variables": {
         "storageAccountName": "[concat(uniquestring(resourceGroup().id), 'squalio')]",
-        "addressPrefix": "10.0.0.0/16",
+        "addressPrefix": "192.168.0.0//16",
         "subnetName": "Subnet",
-        "subnetPrefix": "10.0.0.0/24",
+        "subnetPrefix": "192.168.1.0/24",
         "virtualNetworkName": "SQUALIO-VNET"
     },
     "resources": [
