@@ -72,6 +72,15 @@
                                 "name": "RS0",
                                 "tier": "Standard"
                             }
+                        },
+                        {
+                            "type": "Microsoft.Storage/storageAccounts",
+                            "name": "madars2squalio",
+                            "apiVersion": "2015-06-15",
+                            "location": "[parameters('location')]",
+                            "properties": {
+                                "accountType": "Premium_LRS"
+                            }
                         }
                     ],
                     "outputs": {}
