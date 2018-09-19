@@ -21,15 +21,10 @@
         "absr_name": {
             "type": "string",
             "defaultValue": "SQUALIO-AzureBSR"
-        },
-        "storagePrefix": {
-            "type": "string",
-            "maxLength": 11
         }
 
     },
     "variables": {
-        "storageName": "[concat(parameters('storagePrefix'), uniqueString(subscription().id, parameters('rgBackupSiteRecovery')))]"
     },
     "resources": [
         {
@@ -70,13 +65,14 @@
                     "variables": {},
                     "resources": [
                         {
-                            "type": "Microsoft.Storage/storageAccounts",
-                            "apiVersion": "2017-10-01",
-                            "name": "[variables('storageName')]",
+                            "type": "Microsoft.RecoveryServices/vaults",
+                            "apiVersion": "2016-06-01",
+                            "name": "[parameters('absr_name')]",
                             "location": "[parameters('location')]",
                             "kind": "StorageV2",
                             "sku": {
-                                "name": "Standard_LRS"
+                                "name": "RS0",
+                                "tier": "Standard"
                             }
                         }
                     ],
