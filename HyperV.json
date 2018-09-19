@@ -73,6 +73,15 @@
                                 "name": "RS0",
                                 "tier": "Standard"
                             }
+                        },
+                        {
+                            "type": "Microsoft.Storage/storageAccounts",
+                            "name": "[toLower('WindowsVM1madars')]",
+                            "apiVersion": "2015-06-15",
+                            "location": "[resourceGroup().location]",
+                            "properties": {
+                                "accountType": "Standard_LRS"
+                            }
                         }
                     ],
                     "outputs": {}
