@@ -23,9 +23,7 @@
             "defaultValue": "SQUALIO-AzureBSR4"
         }
     },
-    "variables": {
-        "storagePrefix": "[concat(uniquestring(resourceGroup().id), 'squalio')]"
-    },
+    "variables": {},
     "resources": [
         {
             "type": "Microsoft.Resources/resourceGroups",
@@ -47,15 +45,6 @@
             "location": "[parameters('location')]",
             "name": "[parameters('rgBackupSiteRecovery')]",
             "properties": {}
-        },
-        {
-            "type": "Microsoft.Storage/storageAccounts",
-            "name": "[variables('storagePrefix')]",
-            "apiVersion": "2015-06-15",
-            "location": "[parameters('location')]",
-            "properties": {
-                "accountType": "Standard_LRS"
-            }
         },
         {
             "type": "Microsoft.Resources/deployments",
