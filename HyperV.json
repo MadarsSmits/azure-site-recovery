@@ -2,9 +2,17 @@
     "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.1",
     "parameters": {
-        "rgName": {
+        "rgHyperV": {
             "type": "string",
             "defaultValue": "HyperV-onPrem"
+        },
+        "rgBackup": {
+            "type": "string",
+            "defaultValue": "Backup-inAzure"
+        },
+        "rgBackupSiteRecovery": {
+            "type": "string",
+            "defaultValue": "AzureBSR-inAzure"
         },
         "rgLocation": {
             "type": "string",
@@ -17,7 +25,21 @@
             "type": "Microsoft.Resources/resourceGroups",
             "apiVersion": "2018-05-01",
             "location": "[parameters('rgLocation')]",
-            "name": "[parameters('rgName')]",
+            "name": "[parameters('rgHyperV')]",
+            "properties": {}
+        },
+        {
+            "type": "Microsoft.Resources/resourceGroups",
+            "apiVersion": "2018-05-01",
+            "location": "[parameters('rgLocation')]",
+            "name": "[parameters('rgBackup')]",
+            "properties": {}
+        },
+        {
+            "type": "Microsoft.Resources/resourceGroups",
+            "apiVersion": "2018-05-01",
+            "location": "[parameters('rgLocation')]",
+            "name": "[parameters('rgBackupSiteRecovery')]",
             "properties": {}
         }
     ],
