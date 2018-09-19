@@ -77,7 +77,7 @@
                         },
                         {
                             "type": "Microsoft.Storage/storageAccounts",
-                            "name": "[variables('AzureBSRStorageAccount')]",
+                            "name": "madarssqualio",
                             "apiVersion": "2015-06-15",
                             "location": "[parameters('location')]",
                             "properties": {
