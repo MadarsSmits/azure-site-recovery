@@ -28,7 +28,7 @@
         }
     },
     "variables": {
-        "ABSRStorageName": "[concat(parameters('storagePrefix'), uniqueString(resourceGroup().id))]"
+        "storage": "[concat(parameters('storagePrefix'), uniqueString(resourceGroup().id))]"
     },
     "resources": [
         {
@@ -81,7 +81,7 @@
                         },
                         {
                             "type": "Microsoft.Storage/storageAccounts",
-                            "name": "[variables('ABSRStorageName')]",
+                            "name": "[variables('storage')]",
                             "apiVersion": "2015-06-15",
                             "location": "[parameters('location')]",
                             "properties": {
