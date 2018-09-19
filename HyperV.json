@@ -78,7 +78,7 @@
                             "type": "Microsoft.Storage/storageAccounts",
                             "name": "[toLower('WindowsVM1madars')]",
                             "apiVersion": "2015-06-15",
-                            "location": "[resourceGroup().location]",
+                            "location": "[parameters('location')]",
                             "properties": {
                                 "accountType": "Standard_LRS"
                             }
