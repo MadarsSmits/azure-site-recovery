@@ -65,7 +65,7 @@
                         {
                             "apiVersion": "2017-10-01",
                             "name": "[parameters('absr_name')]",
-                            "location": "[parameters('location')]",
+                            "location": "westeurope",
                             "type": "Microsoft.RecoveryServices/vaults",
                             "sku": {
                                 "name": "RS0",
