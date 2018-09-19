@@ -24,6 +24,7 @@
         }
     },
     "variables": {
+        "AzureBSRStorageAccount": "[concat(uniquestring(resourceGroup().id), 'squalio')]"
     },
     "resources": [
         {
@@ -50,7 +51,7 @@
         {
             "type": "Microsoft.Resources/deployments",
             "apiVersion": "2017-05-10",
-            "name": "ABSRDeployment",
+            "name": "AzureBSR-inAzure",
             "resourceGroup": "[parameters('rgBackupSiteRecovery')]",
             "dependsOn": [
                 "[resourceId('Microsoft.Resources/resourceGroups/', parameters('rgBackupSiteRecovery'))]"
@@ -76,7 +77,7 @@
                         },
                         {
                             "type": "Microsoft.Storage/storageAccounts",
-                            "name": "[toLower('WindowsVM1madars')]",
+                            "name": "[variables('AzureBSRStorageAccount')]",
                             "apiVersion": "2015-06-15",
                             "location": "[parameters('location')]",
                             "properties": {
