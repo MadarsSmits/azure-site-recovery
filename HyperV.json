@@ -24,11 +24,10 @@
         },
         "storagePrefix": {
             "type": "string",
-            "maxLength": 11
+            "defaultValue": "madars3demo"
         }
     },
     "variables": {
-        "storage": "[concat(parameters('storagePrefix'), uniqueString(resourceGroup().id))]"
     },
     "resources": [
         {
@@ -81,7 +80,7 @@
                         },
                         {
                             "type": "Microsoft.Storage/storageAccounts",
-                            "name": "[variables('storage')]",
+                            "name": "[parameters('storagePrefix')]",
                             "apiVersion": "2015-06-15",
                             "location": "[parameters('location')]",
                             "properties": {
