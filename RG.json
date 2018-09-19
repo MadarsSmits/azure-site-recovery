@@ -23,21 +23,21 @@
     "resources": [
         {
             "type": "Microsoft.Resources/resourceGroups",
-            "apiVersion": "2018-05-01",
+            "apiVersion": "2018-02-01",
             "location": "[parameters('location')]",
             "name": "[parameters('rgHyperV')]",
             "properties": {}
         },
         {
             "type": "Microsoft.Resources/resourceGroups",
-            "apiVersion": "2018-05-01",
+            "apiVersion": "2018-02-01",
             "location": "[parameters('location')]",
             "name": "[parameters('rgBackup')]",
             "properties": {}
         },
         {
             "type": "Microsoft.Resources/resourceGroups",
-            "apiVersion": "2018-05-01",
+            "apiVersion": "2018-02-01",
             "location": "[parameters('location')]",
             "name": "[parameters('rgBackupSiteRecovery')]",
             "properties": {}

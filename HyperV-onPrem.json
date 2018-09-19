@@ -35,11 +35,7 @@
       "metadata": {
         "description": "Location for all resources."
       }
-    },
-    "sr_name": {
-      "type": "string",
-      "defaultValue": "SQUALIOSRVault"
-     }
+    }
   },
   "variables": {
     "nicName": "HyperV-NIC",
@@ -53,17 +49,6 @@
     "subnetRef": "[resourceId('Microsoft.Network/virtualNetworks/subnets', variables('virtualNetworkName'), variables('subnetName'))]"
   },
   "resources": [
-    {
-      "apiVersion": "2018-01-10",
-      "name": "[parameters('sr_name')]",
-      "location": "[parameters('location')]",
-      "type": "Microsoft.RecoveryServices/vaults",
-      "sku": {
-          "name": "RS0",
-          "tier": "Standard"
-      },
-      "properties": {}
-  },
     {
       "type": "Microsoft.Network/networkSecurityGroups",
       "name": "[variables('nsgName')]",
@@ -250,7 +235,7 @@
       }
     },
     {
-      "apiVersion": "2017-03-30",
+      "apiVersion": "2017-12-01",
       "type": "Microsoft.Compute/virtualMachines",
       "name": "[variables('vmName')]",
       "location": "[parameters('location')]",
