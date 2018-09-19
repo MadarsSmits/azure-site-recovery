@@ -4,15 +4,15 @@
     "parameters": {
         "rgHyperV": {
             "type": "string",
-            "defaultValue": "HyperV-onPrem"
+            "defaultValue": "HyperV-onPrem2"
         },
         "rgBackup": {
             "type": "string",
-            "defaultValue": "BackupVMs-onPrem"
+            "defaultValue": "BackupVMs-onPrem2"
         },
         "rgBackupSiteRecovery": {
             "type": "string",
-            "defaultValue": "AzureBSR-inAzure"
+            "defaultValue": "AzureBSR-inAzure2"
         },
         "location": {
             "type": "string",
@@ -20,7 +20,7 @@
         },
         "absr_name": {
             "type": "string",
-            "defaultValue": "SQUALIO-AzureBSR"
+            "defaultValue": "SQUALIO-AzureBSR2"
         }
     },
     "variables": {},
