@@ -23,9 +23,7 @@
             "defaultValue": "SQUALIO-AzureBSR3"
         }
     },
-    "variables": {
-        "AzureBSRStorageAccount": "[concat(uniquestring(resourceGroup().id), 'squalio')]"
-    },
+    "variables": {},
     "resources": [
         {
             "type": "Microsoft.Resources/resourceGroups",
