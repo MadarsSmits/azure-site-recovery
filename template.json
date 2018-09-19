@@ -2,24 +2,16 @@
 "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json",
 	"contentVersion": "1.0.0.0",
 	"parameters": {
-		"name": {
+		"sr_name": {
 		"type": "string",
 		"defaultValue": "MadarsDR2"
-	 },
-		"location": {
-		"type": "string",
-		"defaultValue": "westeurope"
-	 },
-		"apiVersion": {
-		"type": "string",
-		"defaultValue": "2018-01-10"
-        }
+	 }
     },
  	"resources": [
         {
-            "apiVersion": "[parameters('apiVersion')]",
-            "name": "[parameters('name')]",
-            "location": "[parameters('location')]",
+            "apiVersion": "2018-01-10",
+            "name": "[parameters('sr_name')]",
+            "location": "[resourceGroup().location]",
             "type": "Microsoft.RecoveryServices/vaults",
             "sku": {
                 "name": "RS0",
