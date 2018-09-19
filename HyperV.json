@@ -65,7 +65,7 @@
                         {
                             "apiVersion": "2017-10-01",
                             "name": "[parameters('absr_name')]",
-                            "location": "[resourceGroup().location]",
+                            "location": "[parameters('location')]",
                             "type": "Microsoft.RecoveryServices/vaults",
                             "sku": {
                                 "name": "RS0",
