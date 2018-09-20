@@ -201,9 +201,9 @@
               "addressPrefix": "[variables('subnetPrefix')]",
               "networkSecurityGroup": {
                 "id": "[resourceId('Microsoft.Network/networkSecurityGroups/', variables('nsgName'))]"
+              }
             }
           }
-        }  
         ]
       }
     },
@@ -277,23 +277,23 @@
       "name": "HyperV-VM/config-hyperv-script",
       "location": "[parameters('location')]",
       "dependsOn": [
-          "[concat('Microsoft.Compute/virtualMachines/', variables('vmName'))]"
-        ],
-     "properties": {
-          "publisher": "Microsoft.Compute",
-          "type": "CustomScriptExtension",
-          "typeHandlerVersion": "1.9",
-          "autoUpgradeMinorVersion": true,
-          "settings": {
-              "fileUris": [
-                  "https://raw.githubusercontent.com/MadarsSmits/azure-site-recovery/master/scripts/Azure_NestedHyper-V_Script.ps1"
-              ]
-          },
-          "protectedSettings": {
-              "commandToExecute": "powershell -ExecutionPolicy Unrestricted -File Azure_NestedHyper-V_Script.ps1"
-          }
+        "[concat('Microsoft.Compute/virtualMachines/', variables('vmName'))]"
+      ],
+      "properties": {
+        "publisher": "Microsoft.Compute",
+        "type": "CustomScriptExtension",
+        "typeHandlerVersion": "1.9",
+        "autoUpgradeMinorVersion": true,
+        "settings": {
+          "fileUris": [
+            "https://raw.githubusercontent.com/MadarsSmits/azure-site-recovery/master/scripts/Azure_NestedHyper-V_Script.ps1"
+          ]
+        },
+        "protectedSettings": {
+          "commandToExecute": "powershell -ExecutionPolicy Unrestricted -File Azure_NestedHyper-V_Script.ps1"
+        }
       }
-  }
+    }
   ],
   "outputs": {
     "hostname": {
