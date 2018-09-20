@@ -41,3 +41,18 @@ Manual
 Template "BackupVMs-onPrem.json"
 ------------------------
 az group deployment create --template-uri https://raw.githubusercontent.com/MadarsSmits/azure-site-recovery/master/BackupVMs-onPrem.json --verbose --resource-group BackupVMs-onPrem --debug --no-wait
+
+- Backup NSG
+- Backup VNET
+- LinSCE1 VM
+- LinSCE1 NIC
+- LinSCE1 PUBLIC IP
+- LinSCE1 OS Disk
+- WinSCE2 VM
+- WinSCE2 NIC
+- WinSCE2 PUBLIC IP
+- WinSCE2 OS Disk
+- WinSCE3 VM
+- WinSCE3 NIC
+- WinSCE3 PUBLIC IP
+- WinSCE3 OS Disk
