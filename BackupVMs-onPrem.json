@@ -15,9 +15,23 @@
                 "description": "Password for the Virtual Machine."
             }
         },
-        "dnsLabelPrefix": {
+        "dnsLabelPrefix1": {
             "type": "string",
-            "defaultValue": "[concat(uniquestring(resourceGroup().id), 'squaliodr')]",
+            "defaultValue": "[concat(uniquestring(resourceGroup().id), 'backup1')]",
+            "metadata": {
+                "description": "Unique DNS Name for the Public IP used to access the Virtual Machine."
+            }
+        },
+        "dnsLabelPrefix2": {
+            "type": "string",
+            "defaultValue": "[concat(uniquestring(resourceGroup().id), 'backup2')]",
+            "metadata": {
+                "description": "Unique DNS Name for the Public IP used to access the Virtual Machine."
+            }
+        },
+        "dnsLabelPrefix3": {
+            "type": "string",
+            "defaultValue": "[concat(uniquestring(resourceGroup().id), 'backup3')]",
             "metadata": {
                 "description": "Unique DNS Name for the Public IP used to access the Virtual Machine."
             }
@@ -129,7 +143,7 @@
             "properties": {
                 "publicIPAllocationMethod": "Dynamic",
                 "dnsSettings": {
-                    "domainNameLabel": "[parameters('dnsLabelPrefix')]"
+                    "domainNameLabel": "[parameters('dnsLabelPrefix1')]"
                 }
             }
         },
@@ -141,7 +155,7 @@
             "properties": {
                 "publicIPAllocationMethod": "Dynamic",
                 "dnsSettings": {
-                    "domainNameLabel": "[parameters('dnsLabelPrefix')]"
+                    "domainNameLabel": "[parameters('dnsLabelPrefix2')]"
                 }
             }
         },
@@ -153,7 +167,7 @@
             "properties": {
                 "publicIPAllocationMethod": "Dynamic",
                 "dnsSettings": {
-                    "domainNameLabel": "[parameters('dnsLabelPrefix')]"
+                    "domainNameLabel": "[parameters('dnsLabelPrefix3')]"
                 }
             }
         },
