@@ -141,10 +141,7 @@
             "name": "[variables('publicIPAddressName1')]",
             "location": "[parameters('location')]",
             "properties": {
-                "publicIPAllocationMethod": "Dynamic",
-                "dnsSettings": {
-                    "domainNameLabel": "[parameters('dnsLabelPrefix1')]"
-                }
+                "publicIPAllocationMethod": "Dynamic"
             }
         },
         {
@@ -153,10 +150,7 @@
             "name": "[variables('publicIPAddressName2')]",
             "location": "[parameters('location')]",
             "properties": {
-                "publicIPAllocationMethod": "Dynamic",
-                "dnsSettings": {
-                    "domainNameLabel": "[parameters('dnsLabelPrefix2')]"
-                }
+                "publicIPAllocationMethod": "Dynamic"
             }
         },
         {
@@ -165,10 +159,7 @@
             "name": "[variables('publicIPAddressName3')]",
             "location": "[parameters('location')]",
             "properties": {
-                "publicIPAllocationMethod": "Dynamic",
-                "dnsSettings": {
-                    "domainNameLabel": "[parameters('dnsLabelPrefix3')]"
-                }
+                "publicIPAllocationMethod": "Dynamic"
             }
         },
         {

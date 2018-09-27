@@ -11,7 +11,7 @@ az deployment create --template-uri https://raw.githubusercontent.com/MadarsSmit
 - AzureBSR-inAzure RG
 
 ------------------------
-AzureBSR-inAzure.json"
+Template "AzureBSR-inAzure.json"
 ------------------------
 az group deployment create --template-uri https://raw.githubusercontent.com/MadarsSmits/azure-site-recovery/master/AzureBSR-inAzure.json --verbose --resource-group AzureBSR-inAzure --debug --no-wait
 
