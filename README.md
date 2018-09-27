@@ -44,10 +44,10 @@ az group deployment create --template-uri https://raw.githubusercontent.com/Mada
 
 - Backup NSG
 - Backup VNET
-- LinSCE1 VM
-- LinSCE1 NIC
-- LinSCE1 PUBLIC IP
-- LinSCE1 OS Disk
+- WinSCE1 VM
+- WinSCE1 NIC
+- WinSCE1 PUBLIC IP
+- WinSCE1 OS Disk
 - WinSCE2 VM
 - WinSCE2 NIC
 - WinSCE2 PUBLIC IP
