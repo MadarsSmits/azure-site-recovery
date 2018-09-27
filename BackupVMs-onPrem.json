@@ -362,17 +362,5 @@
         }
     ],
     "outputs": {
-        "hostname1": {
-            "type": "string",
-            "value": "[reference(variables('publicIPAddressName1')).dnsSettings.fqdn]"
-        },
-        "hostname2": {
-            "type": "string",
-            "value": "[reference(variables('publicIPAddressName2')).dnsSettings.fqdn]"
-        },
-        "hostname3": {
-            "type": "string",
-            "value": "[reference(variables('publicIPAddressName3')).dnsSettings.fqdn]"
-        }
     }
 }
