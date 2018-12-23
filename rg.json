@@ -31,6 +31,7 @@
             "properties": {}
         }
     ],
+<<<<<<< HEAD:RG.json
     "outputs": {
         "final": {
             "type": "string",
@@ -38,3 +39,7 @@
         }
     }
 }
+=======
+    "outputs": {}
+}
+>>>>>>> 932ee5f972700587d3887b718ddbadcb78d993b5:rg.json
