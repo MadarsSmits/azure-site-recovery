@@ -12,7 +12,7 @@
         }
     },
     "variables": {
-        "storageAccountName": "[concat(uniquestring(resourceGroup().id), 'siterecovery')]",
+        "storageAccountName": "[concat(uniquestring(resourceGroup().id), 'storage')]",
         "addressPrefix": "10.4.0.0/16",
         "subnetName": "Subnet",
         "subnetPrefix": "10.4.0.0/24",
