@@ -2,18 +2,6 @@
     "$schema": "https://schema.management.azure.com/schemas/2018-05-01/subscriptionDeploymentTemplate.json#",
     "contentVersion": "1.0.0.1",
     "parameters": {
-        "rgHyperV": {
-            "type": "string",
-            "defaultValue": "HyperV-onPrem"
-        },
-        "rgBackup": {
-            "type": "string",
-            "defaultValue": "BackupVMs-onPrem"
-        },
-        "rgBackupSiteRecovery": {
-            "type": "string",
-            "defaultValue": "AzureBSR-inAzure"
-        },
         "location": {
             "type": "string",
             "defaultValue": "westeurope"
@@ -25,23 +13,28 @@
             "type": "Microsoft.Resources/resourceGroups",
             "apiVersion": "2018-05-01",
             "location": "[parameters('location')]",
-            "name": "HyperV-onPrem",
+            "name": "valis3-HyperV",
             "properties": {}
         },
         {
             "type": "Microsoft.Resources/resourceGroups",
             "apiVersion": "2018-05-01",
             "location": "[parameters('location')]",
-            "name": "HyperV-onPrem2",
+            "name": "valis3-BSR",
             "properties": {}
         },
         {
             "type": "Microsoft.Resources/resourceGroups",
             "apiVersion": "2018-05-01",
             "location": "[parameters('location')]",
-            "name": "HyperV-onPrem3",
+            "name": "valis3-VMs",
             "properties": {}
         }
     ],
-    "outputs": {}
+    "outputs": {
+        "final": {
+            "type": "string",
+            "value": "Success! Resource groups created."
+        }
+    }
 }
