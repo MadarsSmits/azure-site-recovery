@@ -1,5 +1,5 @@
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2018-05-01/subscriptionDeploymentTemplate.json#",
     "contentVersion": "1.0.0.1",
     "parameters": {
         "rgHyperV": {
@@ -25,21 +25,21 @@
             "type": "Microsoft.Resources/resourceGroups",
             "apiVersion": "2018-05-01",
             "location": "[parameters('location')]",
-            "name": "[parameters('rgHyperV')]",
+            "name": "HyperV-onPrem",
             "properties": {}
         },
         {
             "type": "Microsoft.Resources/resourceGroups",
             "apiVersion": "2018-05-01",
             "location": "[parameters('location')]",
-            "name": "[parameters('rgBackup')]",
+            "name": "HyperV-onPrem2",
             "properties": {}
         },
         {
             "type": "Microsoft.Resources/resourceGroups",
             "apiVersion": "2018-05-01",
             "location": "[parameters('location')]",
-            "name": "[parameters('rgBackupSiteRecovery')]",
+            "name": "HyperV-onPrem3",
             "properties": {}
         }
     ],
