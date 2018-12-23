@@ -4,7 +4,7 @@
     "parameters": {
         "sr_name": {
             "type": "string",
-            "defaultValue": "SQUALIO-Demo"
+            "defaultValue": "valis3-BSR"
         },
         "storageAccountType": {
             "type": "string",
@@ -12,11 +12,11 @@
         }
     },
     "variables": {
-        "storageAccountName": "[concat(uniquestring(resourceGroup().id), 'squalio')]",
-        "addressPrefix": "192.168.0.0/16",
+        "storageAccountName": "[concat(uniquestring(resourceGroup().id), 'siterecovery')]",
+        "addressPrefix": "10.4.0.0/16",
         "subnetName": "Subnet",
-        "subnetPrefix": "192.168.1.0/24",
-        "virtualNetworkName": "SQUALIO-VNET"
+        "subnetPrefix": "10.4.0.0/24",
+        "virtualNetworkName": "valis3-VNET"
     },
     "resources": [
         {
@@ -38,7 +38,7 @@
             "sku": {
                 "name": "[parameters('storageAccountType')]"
             },
-            "kind": "Storage",
+            "kind": "StorageV2",
             "properties": {}
         },
         {
