@@ -2,28 +2,19 @@
 Azure Workshop "Valis v0.3"
 
 ---------------
-Template "RG.json"
+Templates
 ---------------
-az deployment create --template-uri https://raw.githubusercontent.com/MadarsSmits/azure-site-recovery/master/RG.json --verbose --location westeurope --debug
+az deployment create --template-uri https://raw.githubusercontent.com/MadarsSmits/azure-site-recovery/master/rg.json --verbose --location westeurope<br/><br/>
+az group deployment create --template-uri https://raw.githubusercontent.com/MadarsSmits/azure-site-recovery/master/template-BSR.json --verbose --resource-group valis3-BSR --no-wait<br/><br/>
+az group deployment create --template-uri https://raw.githubusercontent.com/MadarsSmits/azure-site-recovery/master/template-HyperV.json --verbose --resource-group valis3-HyperV --no-wait<br/><br/>
+az group deployment create --template-uri https://raw.githubusercontent.com/MadarsSmits/azure-site-recovery/master/template-VMs.json --verbose --resource-group valis3-VMs
 
-- HyperV-onPrem RG
-- BackupVMs-onPrem RG
-- AzureBSR-inAzure RG
+__valis3-BSR:__
+- valis3-BSR
+- valis3-VNET
+- pc47ofbueyttustorage
 
-------------------------
-Template "AzureBSR-inAzure.json"
-------------------------
-az group deployment create --template-uri https://raw.githubusercontent.com/MadarsSmits/azure-site-recovery/master/AzureBSR-inAzure.json --verbose --resource-group AzureBSR-inAzure --debug --no-wait
-
-- AzureBSR Vault
-- AzureBSR VNET
-- AzureBSR StorageAccount
-
-------------------------
-Template "HyperV-onPrem.json"
-------------------------
-az group deployment create --template-uri https://raw.githubusercontent.com/MadarsSmits/azure-site-recovery/master/HyperV-onPrem.json --verbose --resource-group HyperV-onPrem --debug --no-wait
-
+__valis3-HyperV:__
 - Hyper-V VM
 - Hyper-V OS Disk
 - Hyper-V NIC
@@ -40,7 +31,7 @@ Manual
 ------------------------
 Template "BackupVMs-onPrem.json"
 ------------------------
-az group deployment create --template-uri https://raw.githubusercontent.com/MadarsSmits/azure-site-recovery/master/BackupVMs-onPrem.json --verbose --resource-group BackupVMs-onPrem --debug --no-wait
+
 
 - Backup NSG
 - Backup VNET

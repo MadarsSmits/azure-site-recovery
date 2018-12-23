@@ -32,9 +32,9 @@
   },
   "variables": {
     "nicName": "HyperV-NIC",
-    "addressPrefix": "10.0.0.0/16",
+    "addressPrefix": "10.5.0.0/16",
     "subnetName": "Subnet",
-    "subnetPrefix": "10.0.0.0/24",
+    "subnetPrefix": "10.5.0.0/24",
     "publicIPAddressName": "HyperV-PublicIP",
     "vmName": "HyperV-VM",
     "virtualNetworkName": "HyperV-VNET",
