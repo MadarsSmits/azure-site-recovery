@@ -254,10 +254,6 @@
                         "[variables('sqlservername')]"
                     ],
                     "properties": {
-                    },
-                    "sku": {
-                        "name": "S1",
-                        "tier": "Standard"
                     }
                 }
             ]
