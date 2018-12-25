@@ -252,7 +252,7 @@
                         "collation": "SQL_Latin1_General_CP1_CI_AS",
                         "maxSizeBytes": "268435456000",
                         "sampleName": "",
-                        "zoneRedundant": "false",
+                        "zoneRedundant": "False",
                         "licenseType": "",
                         "readScale": "Disabled",
                         "readReplicaCount": "0"
@@ -270,7 +270,7 @@
                         "[concat('Microsoft.Sql/servers/', variables('sqlservername'))]"
                     ],
                     "location": "[parameters('location')]",
-                    "name": "AllowAllWindowsAzureIps",
+                    "name": "True",
                     "properties": {
                         "endIpAddress": "0.0.0.0",
                         "startIpAddress": "0.0.0.0"
@@ -278,7 +278,7 @@
                     "type": "firewallrules"
                 },
                 {
-                    "condition": "false",
+                    "condition": "False",
                     "apiVersion": "2017-03-01-preview",
                     "type": "securityAlertPolicies",
                     "name": "Default",
