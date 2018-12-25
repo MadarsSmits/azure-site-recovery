@@ -283,7 +283,7 @@
                     "condition": "[parameters('allowAzureIps')]",
                     "apiVersion": "2014-04-01",
                     "dependsOn": [
-                        "[resourceId('Microsoft.Sql/servers/', variables('sqlservername'))]"
+                        "[concat('Microsoft.Sql/servers/', variables('sqlservername'))]"
                     ],
                     "location": "[parameters('location')]",
                     "name": "AllowAllWindowsAzureIps",
@@ -291,22 +291,6 @@
                         "endIpAddress": "0.0.0.0",
                         "startIpAddress": "0.0.0.0"
                     }    
-                },
-                {
-                    "condition": "[parameters('enableATP')]",
-                    "apiVersion": "2014-04-01",
-                    "type": "securityAlertPolicies",
-                    "name": "Default",
-                    "dependsOn": [
-                        "[resourceId('Microsoft.Sql/servers/', variables('sqlservername'))]",
-                        "[resourceId('Microsoft.Sql/servers/', variables('sqlservername'), '/databases/', parameters('databaseName'))]"
-                    ],
-                    "properties": {
-                        "state": "Enabled",
-                        "disabledAlerts": [],
-                        "emailAddresses": [],
-                        "emailAccountAdmins": true
-                    }
                 }
             ]
         }
