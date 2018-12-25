@@ -226,7 +226,7 @@
                         "StartingDeviceID": "2"
                     },
                     "AdditionalFeaturesServerConfigurations": {
-                        "IsRServicesEnabled": "false"
+                        "IsRServicesEnabled": false
                     }
                 }
             }
@@ -252,7 +252,7 @@
                         "collation": "SQL_Latin1_General_CP1_CI_AS",
                         "maxSizeBytes": "268435456000",
                         "sampleName": "",
-                        "zoneRedundant": "False",
+                        "zoneRedundant": false,
                         "licenseType": "",
                         "readScale": "Disabled",
                         "readReplicaCount": "0"
@@ -264,13 +264,14 @@
                     "type": "databases"
                 },
                 {
-                    "condition": "true",
+                    "condition": true,
+
                     "apiVersion": "2014-04-01-preview",
                     "dependsOn": [
                         "[concat('Microsoft.Sql/servers/', variables('sqlservername'))]"
                     ],
                     "location": "[parameters('location')]",
-                    "name": "True",
+                    "name": "AllowAllWindowsAzureIps",
                     "properties": {
                         "endIpAddress": "0.0.0.0",
                         "startIpAddress": "0.0.0.0"
@@ -278,7 +279,7 @@
                     "type": "firewallrules"
                 },
                 {
-                    "condition": "False",
+                    "condition": false,
                     "apiVersion": "2017-03-01-preview",
                     "type": "securityAlertPolicies",
                     "name": "Default",
@@ -297,6 +298,5 @@
             "type": "Microsoft.Sql/servers"
         }
     ],
-    "outputs": {
-    }
+    "outputs": {}
 }
