@@ -21,6 +21,18 @@
             "metadata": {
                 "description": "Location for all resources."
             }
+        },
+        "enableATP": {
+            "type": "bool",
+            "defaultValue": false
+        },
+        "allowAzureIps": {
+            "type": "bool",
+            "defaultValue": true
+        },
+        "zoneRedundant": {
+            "type": "bool",
+            "defaultValue": false
         }
     },
     "variables": {
@@ -252,7 +264,7 @@
                         "collation": "SQL_Latin1_General_CP1_CI_AS",
                         "maxSizeBytes": "268435456000",
                         "sampleName": "",
-                        "zoneRedundant": false,
+                        "zoneRedundant": "[parameters('zoneRedundant')]",
                         "licenseType": "",
                         "readScale": "Disabled",
                         "readReplicaCount": "0"
@@ -264,7 +276,7 @@
                     "type": "databases"
                 },
                 {
-                    "condition": true,
+                    "condition": "[parameters('allowAzureIps')]",
 
                     "apiVersion": "2014-04-01-preview",
                     "dependsOn": [
@@ -279,7 +291,7 @@
                     "type": "firewallrules"
                 },
                 {
-                    "condition": false,
+                    "condition": "[parameters('enableATP')]",
                     "apiVersion": "2017-03-01-preview",
                     "type": "securityAlertPolicies",
                     "name": "Default",
