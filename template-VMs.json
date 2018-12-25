@@ -22,18 +22,6 @@
                 "description": "Location for all resources."
             }
         },
-        "enableATP": {
-            "type": "bool",
-            "defaultValue": false
-        },
-        "allowAzureIps": {
-            "type": "bool",
-            "defaultValue": true
-        },
-        "zoneRedundant": {
-            "type": "bool",
-            "defaultValue": false
-        },
         "databaseName": {
             "type": "string",
             "defaultValue": "demodatabase"
@@ -154,7 +142,7 @@
             }
         },
         {
-            "apiVersion": "2017-12-01",
+            "apiVersion": "2018-06-01",
             "type": "Microsoft.Compute/virtualMachines",
             "name": "[variables('vmName1')]",
             "location": "[parameters('location')]",
@@ -190,7 +178,7 @@
                         {
                             "createOption": "Empty",
                             "lun": 0,
-                            "diskSizeGB": "1023",
+                            "diskSizeGB": 1023,
                             "caching": "ReadOnly",
                             "managedDisk": {
                                 "storageAccountType": "Premium_LRS"
@@ -263,34 +251,14 @@
                     "location": "[parameters('location')]",
                     "apiVersion": "2014-04-01",
                     "dependsOn": [
-                        "[concat('Microsoft.Sql/servers/', variables('sqlservername'))]"
+                        "[variables('sqlservername')]"
                     ],
                     "properties": {
-                        "collation": "SQL_Latin1_General_CP1_CI_AS",
-                        "maxSizeBytes": "268435456000",
-                        "zoneRedundant": "[parameters('zoneRedundant')]",
-                        "licenseType": "",
-                        "readScale": "Disabled",
-                        "readReplicaCount": "0"
                     },
                     "sku": {
                         "name": "S1",
                         "tier": "Standard"
                     }
-                },
-                {
-                    "type": "firewallRules",
-                    "condition": "[parameters('allowAzureIps')]",
-                    "apiVersion": "2014-04-01",
-                    "dependsOn": [
-                        "[concat('Microsoft.Sql/servers/', variables('sqlservername'))]"
-                    ],
-                    "location": "[parameters('location')]",
-                    "name": "AllowAllWindowsAzureIps",
-                    "properties": {
-                        "endIpAddress": "0.0.0.0",
-                        "startIpAddress": "0.0.0.0"
-                    }    
                 }
             ]
         }
