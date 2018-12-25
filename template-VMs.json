@@ -282,7 +282,7 @@
                     "condition": "[parameters('allowAzureIps')]",
                     "apiVersion": "2014-04-01-preview",
                     "dependsOn": [
-                        "[concat('Microsoft.Sql/servers/', variables('sqlservername'))]"
+                        "[resourceId('Microsoft.Sql/servers/', variables('sqlservername'))]"
                     ],
                     "location": "[parameters('location')]",
                     "name": "AllowAllWindowsAzureIps",
@@ -298,8 +298,8 @@
                     "type": "securityAlertPolicies",
                     "name": "Default",
                     "dependsOn": [
-                        "[concat('Microsoft.Sql/servers/', variables('sqlservername'))]",
-                        "[concat('Microsoft.Sql/servers/', variables('sqlservername'), '/databases/', parameters('databaseName'))]"
+                        "[resourceId('Microsoft.Sql/servers/', variables('sqlservername'))]",
+                        "[resourceId('Microsoft.Sql/servers/', variables('sqlservername'), '/databases/', parameters('databaseName'))]"
                     ],
                     "properties": {
                         "state": "Enabled",
