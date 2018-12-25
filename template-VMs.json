@@ -262,7 +262,7 @@
                         "[concat('Microsoft.Sql/servers/', variables('sqlservername'))]"
                     ],
                     "location": "[parameters('location')]",
-                    "name": "variables('databaseName')",
+                    "name": "parameters('databaseName')",
                     "properties": {
                         "collation": "SQL_Latin1_General_CP1_CI_AS",
                         "maxSizeBytes": "268435456000",
