@@ -29,3 +29,10 @@ Manual
 
 __valis3-VMs__
 
+- w5uxvybrmvtxmsqlserver/demodatabase
+- w5uxvybrmvtxmsqlserver
+- valis3-SQL-VM
+- valis3-SQL-NIC
+- valis3-VMs-VNET
+- valis3-SQL-PublicIP
+- valis3-VMs-NSG
