@@ -18,15 +18,15 @@ __valis3-VMs__
 - HyperV-PublicIP
 - HyperV-VM
 - HyperV-VM_OsDisk
-- SQL-VM
 - SQL-NIC
 - SQL-PublicIP
+- SQL-VM
+- SQL-VM_disk2
 - SQL-VM_OsDisk
-- SQL-VM_Datadisk
-- VMs-VNET
 - VMs-NSG
-- w5uxvybrmvtxmsqlserver/demodatabase
+- VMs-VNET
 - w5uxvybrmvtxmsqlserver
+- w5uxvybrmvtxmsqlserver/simpledatabase
 
 Manual
 - Run "Azure_NestedHyper-V_Script.ps1" secound time
