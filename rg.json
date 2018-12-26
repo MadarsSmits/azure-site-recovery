@@ -13,13 +13,6 @@
             "type": "Microsoft.Resources/resourceGroups",
             "apiVersion": "2018-05-01",
             "location": "[parameters('location')]",
-            "name": "valis3-HyperV",
-            "properties": {}
-        },
-        {
-            "type": "Microsoft.Resources/resourceGroups",
-            "apiVersion": "2018-05-01",
-            "location": "[parameters('location')]",
             "name": "valis3-BSR",
             "properties": {}
         },
