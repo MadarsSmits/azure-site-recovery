@@ -35,4 +35,5 @@ Manual
 - Import both copied VMs into Hyper-V Manager
 
 __valis3-VMs-Failover__
-
+- VMs-BSR-Failover
+- VMs-VNET-Failover
