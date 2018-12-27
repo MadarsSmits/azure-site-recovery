@@ -22,6 +22,13 @@
             "location": "[parameters('location')]",
             "name": "valis3-VMs",
             "properties": {}
+        },
+        {
+            "type": "Microsoft.Resources/resourceGroups",
+            "apiVersion": "2018-05-01",
+            "location": "northeurope",
+            "name": "valis3-VMs-Failover",
+            "properties": {}
         }
     ],
     "outputs": {
