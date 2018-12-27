@@ -9,10 +9,15 @@
         "storageAccountType": {
             "type": "string",
             "defaultValue": "Premium_LRS"
+        },
+        "storageAccountType2": {
+            "type": "string",
+            "defaultValue": "Standard_LRS"
         }
     },
     "variables": {
         "storageAccountName": "[concat(uniquestring(resourceGroup().id), 'storage')]",
+        "storageAccountName2": "[concat(uniquestring(resourceGroup().id), 'logs')]",
         "addressPrefix": "10.4.0.0/16",
         "subnetName": "Subnet",
         "subnetPrefix": "10.4.0.0/24",
@@ -37,6 +42,17 @@
             "location": "[resourceGroup().location]",
             "sku": {
                 "name": "[parameters('storageAccountType')]"
+            },
+            "kind": "Storage",
+            "properties": {}
+        },
+        {
+            "type": "Microsoft.Storage/storageAccounts",
+            "name": "[variables('storageAccountName2')]",
+            "apiVersion": "2018-02-01",
+            "location": "[resourceGroup().location]",
+            "sku": {
+                "name": "[parameters('storageAccountType2')]"
             },
             "kind": "Storage",
             "properties": {}
