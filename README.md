@@ -32,3 +32,6 @@ Manual
 - Run "Azure_NestedHyper-V_Script.ps1" secound time
 - Join Valis Storage Account with SMB and copy both VMs
 - Import both copied VMs into Hyper-V Manager
+
+__valis3-VMs-Failover__
+
