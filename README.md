@@ -6,8 +6,8 @@ Templates
 ---------------
 az deployment create --template-uri https://raw.githubusercontent.com/MadarsSmits/azure-site-recovery/master/rg.json --verbose --location westeurope<br/><br/>
 az group deployment create --template-uri https://raw.githubusercontent.com/MadarsSmits/azure-site-recovery/master/template-BSR.json --verbose --resource-group valis3-BSR --no-wait<br/><br/>
-az group deployment create --template-uri https://raw.githubusercontent.com/MadarsSmits/azure-site-recovery/master/template-VMs.json --verbose --resource-group valis3-VMs<br/><br/>
-az group deployment create --template-uri https://raw.githubusercontent.com/MadarsSmits/azure-site-recovery/master/template-Failover.json --verbose --resource-group valis3-VMs-Failover
+az group deployment create --template-uri https://raw.githubusercontent.com/MadarsSmits/azure-site-recovery/master/template-VMs.json --verbose --resource-group valis3-VMs --no-wait<br/><br/>
+az group deployment create --template-uri https://raw.githubusercontent.com/MadarsSmits/azure-site-recovery/master/template-Failover.json --verbose --resource-group valis3-VMs-Failover --no-wait
 
 __valis3-BSR:__
 - valis3-BSR
