@@ -45,3 +45,6 @@ Manual
 __valis3-VMs-Failover__
 - VMs-BSR-Failover
 - VMs-VNET-Failover
+
+
+TESTS
